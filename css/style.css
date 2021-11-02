@@ -1,36 +1,126 @@
 html,
 body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .main-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background-image: url(/img/jungle2.jpg);
-    background-position: center;
-    background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-image: url(/img/jungle2.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
-.header {
-    position: relative;
-    top: 20%;
-    text-align: center;
-    color: white;
-}
-
+/* This is the monkey bottom left */
 .heymonkey {
-    width: 20%;
-    height: 20%;
-    position: absolute;
-    bottom: 0;
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  animation-name: heymonkey;
+  transition: width 1s, height 1s;
 }
 
+.heymonkey:hover {
+  width: 70%;
+  height: 70%;
+  z-index: 2;
+}
 
- 
+.txt-bubble {
+  font-size: 2.5rem;
+  position: absolute;
+  top: 2%;
+  left: 20%;
+  right: 50;
+  width: 50%;
+  height: 30%;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  animation-name: txt-bubble;
+  z-index: 2;
+  animation-timing-function: ease-out;
+}
+
+.heymonkey:hover ~ .txt-bubble {
+  opacity: 1;
+}
+
+.txt-bubble:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 34px solid #fff;
+  border-right: 22px solid transparent;
+  border-top: 12px solid #fff;
+  border-bottom: 20px solid transparent;
+  left: 82px;
+  bottom: -14px;
+}
+
+/* This is the flying parrots */
+.flying-parrot {
+  width: 150px;
+  height: 100px;
+  position: absolute;
+  top: 20%;
+  left: -20%;
+  z-index: 1;
+  animation-name: flying-parrot;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes flying-parrot {
+  from {
+    left: -20%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+.bird {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: 10%;
+  right: -200%;
+  z-index: 1;
+  animation-name: bird;
+  /* animation-duration: 1s; */
+  animation-iteration-count: infinite;
+  animation-delay: 50s;
+  animation-timing-function: linear;
+  /* animation-fill-mode: forwards; */
+}
+
+@keyframes bird {
+  0% {
+    left: 1000px;
+    top: 600px;
+  }
+  /* 25%  {left:200px; top:0px;}
+  50%  {left:200px; top:200px;}
+  75%  {left:0px; top:200px;} */
+  100% {
+    left: -550px;
+    top: -500px;
+  }
+}
+
 /*transition
 transition-delay
 transition-duration
