@@ -1,0 +1,38 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url(/img/jungle2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.header {
+    position: relative;
+    top: 20%;
+    text-align: center;
+    color: white;
+}
+
+.heymonkey {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    bottom: 0;
+}
+
+
+ 
+/*transition
+transition-delay
+transition-duration
+transition-property
+transition-timing-function */
